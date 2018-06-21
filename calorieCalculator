@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class calorieCalculator {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String gender = input.nextLine();
+        double  weight = Double.parseDouble(input.nextLine());
+        double  height = Double.parseDouble(input.nextLine());
+        int age = Integer.parseInt(input.nextLine());
+        String activity = input.nextLine();
+        double BNM = 0.0;
+        double calories = 0.0;
+        if ("m".equals(gender)){
+            BNM = 66 + (13.7 * weight) + (5 * (height*100.0)) - (6.8 * age);
+        }else if("f".equals(gender)){
+            BNM = 655 + (9.6 * weight) + (1.8 * (height*100.0)) - (4.7 * age);
+        }
+        if (activity.equals("sedentary")){
+            calories = BNM * 1.2;
+        }else if (activity.equals("lightly active")){
+            calories = BNM * 1.375;
+        }else if (activity.equals("moderately active")){
+            calories = BNM * 1.55;
+        }else if (activity.equals("very active")){
+            calories = BNM * 1.725;
+        }
+        calories = Math.ceil(calories);
+        System.out.printf("To maintain your current weight you will need %.0f calories per day.", calories);
+    }
+}
