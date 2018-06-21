@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class sublimeLogo {
+    public static void repeat(String repStr, int n){
+        for (int i = 0; i < n; i++) {
+            System.out.print(repStr);
+        }
+    }
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = Integer.parseInt(input.nextLine());
+        String start = "**";
+        int space = 0;
+        int space2 = 0;
+       for (int i = 0; i < n; i++) {
+            repeat(" ", 2 * n - 2 - space);
+            System.out.print(start);
+            System.out.println();
+            start += "**";
+            space += 2;
+        }
+        repeat("*", 2 * n - 2);
+        System.out.println();
+        repeat("*", 2 * n - 4);
+        System.out.println();
+        repeat("*", 2 * n - 2);
+        System.out.println();
+        repeat("*", 2 * n);
+        System.out.println();
+        System.out.print("  ");
+        repeat("*", 2 * n - 2);
+        System.out.println();
+        System.out.print("    ");
+        repeat("*", 2 * n - 4);
+        System.out.println();
+        System.out.print("  ");
+        repeat("*", 2 * n - 2);
+        System.out.println();
+        for (int i = 0; i < n; i++) {
+            repeat("*", 2 * n - space2);
+            System.out.println();
+            space2 += 2;
+        }
+    }
+}
