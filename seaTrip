@@ -1,0 +1,19 @@
+import java.util.Scanner;
+import java.util.zip.DeflaterOutputStream;
+
+public class seaTrip {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double foodMoney = Double.parseDouble(input.nextLine());
+        double souvenierMoney = Double.parseDouble(input.nextLine());
+        double hotelMoney = Double.parseDouble(input.nextLine());
+        double petrol = 420/100.0*7;
+        double petrolSum = petrol*1.85;
+        double foodAndSouvSum = 3 * foodMoney + 3 * souvenierMoney;
+        double firstDay = hotelMoney * 0.9;
+        double secondDay = hotelMoney * 0.85;
+        double thirdDay = hotelMoney * 0.8;
+        double totalSum = petrolSum + foodAndSouvSum + firstDay + secondDay + thirdDay;
+        System.out.printf("Money needed: %.2f", totalSum);
+    }
+}
