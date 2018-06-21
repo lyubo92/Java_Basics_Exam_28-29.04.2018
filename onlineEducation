@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class onlineEducation {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String earlyEducation = input.nextLine();
+        int earlyStudents = Integer.parseInt(input.nextLine());
+        String education = input.nextLine();
+        int students = Integer.parseInt(input.nextLine());
+        String lateEducation = input.nextLine();
+        int lateStudents = Integer.parseInt(input.nextLine());
+        int onlineStudents = 0;
+        int onsiteStudents = 0;
+        if (earlyEducation.equals("online")){
+            onlineStudents += earlyStudents;
+        }else if (earlyEducation.equals("onsite")){
+            onsiteStudents += earlyStudents;
+        }
+        if (education.equals("online")){
+            onlineStudents += students;
+        }else if (education.equals("onsite")){
+            onsiteStudents += students;
+        }
+        if (lateEducation.equals("online")){
+            onlineStudents += lateStudents;
+        }else if (lateEducation.equals("onsite")){
+            onsiteStudents += lateStudents;
+        }
+        if (onsiteStudents > 600){
+            onlineStudents += onsiteStudents - 600;
+            onsiteStudents = 600;
+        }
+        int totalStudents = onlineStudents + onsiteStudents;
+        System.out.println("Online students: " + onlineStudents);
+        System.out.println("Onsite students: " + onsiteStudents);
+        System.out.println("Total students: " + totalStudents);
+    }
+}
