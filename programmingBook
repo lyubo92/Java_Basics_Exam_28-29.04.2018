@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class programmingBook {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double pagePrice = Double.parseDouble(input.nextLine());
+        double coverPrice = Double.parseDouble(input.nextLine());
+        int discountProcent = Integer.parseInt(input.nextLine());
+        double designerSum = Double.parseDouble(input.nextLine());
+        int teamProcent = Integer.parseInt(input.nextLine());
+        double bookPrice = pagePrice * 899 + coverPrice * 2;
+        double printingSum = bookPrice - ((discountProcent * bookPrice)/100);
+        double totalSum = (printingSum + designerSum) - (((printingSum + designerSum)*teamProcent)/100);
+        System.out.printf("Avtonom should pay %.2f BGN.", totalSum);
+    }
+}
