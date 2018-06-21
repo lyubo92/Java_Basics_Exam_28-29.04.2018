@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class creditSystem {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int courses = Integer.parseInt(input.nextLine());
+        double credits = 0.0;
+        double grades = 0;
+        for (int i = 0; i < courses; i++) {
+            int points = 0;
+            int number = Integer.parseInt(input.nextLine());
+            grades += number % 10;
+            int grade = number % 10;
+            points = number / 10;
+            switch (grade){
+                case 2: credits += 0; break;
+                case 3: credits += 0.5 * points; break;
+                case 4: credits += 0.7 * points; break;
+                case 5: credits += 0.85 * points; break;
+                case 6: credits += points; break;
+            }
+        }
+        double endGrade = grades / courses * 1.0;
+        System.out.printf("%.2f%n",credits);
+        System.out.printf("%.2f",endGrade);
+    }
+}
