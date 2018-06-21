@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class bankNumber {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int a = Integer.parseInt(input.nextLine());
+        char b = input.next().charAt(0);
+        char c = input.next().charAt(0);
+        char d = input.next().charAt(0);
+        int e = input.nextInt();
+        int N = input.nextInt();
+        int count = 0;
+        for (int i = a; i <= 99; i++) {
+            for (char j = b; j <= 'Z'; j++) {
+                for (char k = c; k <= 'z'; k++) {
+                    for (char l = d; l <= 'Z'; l++) {
+                        for (int m = e; m >= 10; m--) {
+                            if (i % 10 == 2 && m % 10 == 5){
+                                count++;
+                                if (count == N){
+                                    System.out.printf("%d%s%s%s%d",i,j,k,l,m);
+                                    break;
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
