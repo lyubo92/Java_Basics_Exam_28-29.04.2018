@@ -1,0 +1,64 @@
+import java.util.Scanner;
+
+public class eifelTower {
+    public static void  repeat(String repStr, int n){
+        for (int i = 0; i < n; i++) {
+            System.out.print(repStr);
+        }
+    }
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = Integer.parseInt(input.nextLine());
+        String middle = "--------";
+        for (int i = 0; i < n; i++) {
+            repeat("-",(2 * n + 4) / 2);
+            System.out.print("**");
+            repeat("-",(2 * n + 4) / 2);
+            System.out.println();
+        }
+        for (int i = 0; i < n - 3; i++) {
+            repeat("-",(2 * n + 2) / 2);
+            System.out.print("****");
+            repeat("-",(2 * n + 2) / 2);
+            System.out.println();
+        }
+        repeat("-",(2 * n) / 2);
+        System.out.print("******");
+        repeat("-",(2 * n) / 2);
+        System.out.println();
+        for (int i = 0; i < n - 4; i++) {
+            repeat("-",(2 * n) / 2);
+            System.out.print("**");
+            System.out.print("--");
+            System.out.print("**");
+            repeat("-",(2 * n) / 2);
+            System.out.println();
+        }
+        for (int i = 0; i < n - 3; i++) {
+            repeat("-",(2 * n - 2) / 2);
+            System.out.print("**");
+            System.out.print("----");
+            System.out.print("**");
+            repeat("-",(2 * n - 2) / 2);
+            System.out.println();
+        }
+        repeat("-",(2 * n - 4) / 2);
+        System.out.print("**********");
+        repeat("-",(2 * n - 4) / 2);
+        System.out.println();
+        //more code
+        for (int i = 0; i < n - 3; i++) {
+            repeat("-", n - 3 - i);
+            System.out.print("**");
+            System.out.print(middle);
+            System.out.print("**");
+            repeat("-", n - 3 - i);
+            System.out.println();
+            middle += "--";
+        }
+        //last row
+        System.out.print("***");
+        repeat("-", 2 * n);
+        System.out.print("***");
+    }
+}
